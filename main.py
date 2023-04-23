@@ -3,6 +3,9 @@ import datetime
 import requests
 import pyautogui
 import time
+import serial
+
+ser = serial.Serial('COM5', 9600)
 
 # Define the list of URLs to choose from
 urls = {
@@ -27,10 +30,12 @@ url_choice = input()
 # Calculate the time delay to the alarm_time
 time_diff = alarm_time - datetime.datetime.now()
 time_delay = time_diff.total_seconds()
+ser.write(str(time_delay).encode())
 
 # Wait for the time delay and open the URL
 if(time_delay > 0):
     time.sleep(time_delay)
+
 
 # Open the URL and click the "Play" button
 webbrowser.open(urls[url_choice][0])

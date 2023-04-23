@@ -21,7 +21,7 @@ void loop() {
   if (turnVolume) {
     for (val = 0; val <= 360; val++) { // move from left to right
       myservo.write(val);
-      delay(5);
+      delay(300);
     }
     turnVolume = false; // reset the flag after the servo movement is complete
   }

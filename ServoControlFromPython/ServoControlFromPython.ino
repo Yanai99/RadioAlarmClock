@@ -19,7 +19,7 @@ void loop() {
     turnVolume = true;
   }
   if (turnVolume) {
-    for (val = 0; val <= 360; val++) { // move from left to right
+    for (val = 0; val <= 180; val++) { // move from left to right
       myservo.write(val);
       delay(300);
     }

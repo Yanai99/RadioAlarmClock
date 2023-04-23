@@ -30,13 +30,15 @@ url_choice = input()
 # Calculate the time delay to the alarm_time
 time_diff = alarm_time - datetime.datetime.now()
 time_delay = time_diff.total_seconds()
-ser.write(str(time_delay).encode())
+#parameter to send to activate arduino
+activate = 1
 
+print(time_delay)
 # Wait for the time delay and open the URL
 if(time_delay > 0):
     time.sleep(time_delay)
 
-
+ser.write(str(activate).encode())
 # Open the URL and click the "Play" button
 webbrowser.open(urls[url_choice][0])
 time.sleep(5)

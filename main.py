@@ -6,9 +6,9 @@ import time
 
 # Define the list of URLs to choose from
 urls = {
-    '1': 'https://radio.coolsite.co.il/m.php?radio=8',
-    '2': 'https://radio.coolsite.co.il/m.php?radio=6',
-    '3': 'https://radio.coolsite.co.il/m.php?radio=1'
+    '1': ('https://radio.coolsite.co.il/m.php?radio=8', 'Galgalz'),
+    '2': ('https://radio.coolsite.co.il/m.php?radio=6', 'Galey Tzahal'),
+    '3': ('https://radio.coolsite.co.il/m.php?radio=1', 'Eco-88')
 }
 
 # Ask the user for the time and URL choice
@@ -21,12 +21,19 @@ alarm_time = now.replace(hour=hours, minute=minutes, second=0, microsecond=0)
 
 print("Choose a URL:")
 for key, value in urls.items():
-    print(f"{key}. {value}")
+    print(f"{key}. {value[1]} ({value[0]})")
 url_choice = input()
+
+# Calculate the time delay to the alarm_time
+time_diff = alarm_time - datetime.datetime.now()
+time_delay = time_diff.total_seconds()
+
+# Wait for the time delay and open the URL
+time.sleep(time_delay)
 
 # Open the URL and click the "Play" button
 response = requests.get(urls[url_choice])
-webbrowser.open(urls[url_choice])
+webbrowser.open(urls[url_choice][0])
 time.sleep(5)
 pyautogui.moveTo(525, 330)
 pyautogui.click()

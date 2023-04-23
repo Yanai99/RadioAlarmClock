@@ -19,9 +19,9 @@ minutes = int(time_input_parts[1])
 now = datetime.datetime.now()
 alarm_time = now.replace(hour=hours, minute=minutes, second=0, microsecond=0)
 
-print("Choose a URL:")
+print("Choose a Station:")
 for key, value in urls.items():
-    print(f"{key}. {value[1]} ({value[0]})")
+    print(f"{key}. {value[1]}")
 url_choice = input()
 
 # Calculate the time delay to the alarm_time
@@ -29,10 +29,10 @@ time_diff = alarm_time - datetime.datetime.now()
 time_delay = time_diff.total_seconds()
 
 # Wait for the time delay and open the URL
-time.sleep(time_delay)
+if(time_delay > 0):
+    time.sleep(time_delay)
 
 # Open the URL and click the "Play" button
-response = requests.get(urls[url_choice])
 webbrowser.open(urls[url_choice][0])
 time.sleep(5)
 pyautogui.moveTo(525, 330)

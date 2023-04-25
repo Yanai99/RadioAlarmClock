@@ -9,7 +9,7 @@ ser = serial.Serial('COM5', 9600)
 
 # Define the list of URLs to choose from
 urls = {
-    '1': ('https://radio.coolsite.co.il/m.php?radio=8', 'Galgalz'),
+    '1': ('https://tunein.com/radio/Joint-Radio-Blues-s203399/', 'Joint Radio Blues'),
     '2': ('https://radio.coolsite.co.il/m.php?radio=6', 'Galey Tzahal'),
     '3': ('https://radio.coolsite.co.il/m.php?radio=1', 'Eco-88')
 }

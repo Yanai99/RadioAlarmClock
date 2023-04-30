@@ -7,6 +7,10 @@ import serial
 
 ser = serial.Serial('COM5', 9600)
 
+ready = 0
+activate = 1
+wake_up = 2
+
 # Define the list of URLs to choose from
 urls = {
     '1': ('https://tunein.com/radio/Joint-Radio-Blues-s203399/', 'Joint Radio Blues'),
@@ -31,7 +35,7 @@ url_choice = input()
 time_diff = alarm_time - datetime.datetime.now()
 time_delay = time_diff.total_seconds()
 #parameter to send to activate arduino
-activate = 1
+
 
 print(time_delay)
 # Wait for the time delay and open the URL
@@ -41,6 +45,3 @@ if(time_delay > 0):
 ser.write(str(activate).encode())
 # Open the URL and click the "Play" button
 webbrowser.open(urls[url_choice][0])
-time.sleep(5)
-pyautogui.moveTo(525, 330)
-pyautogui.click()

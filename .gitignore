@@ -29,3 +29,25 @@ settings.local.py
 *.sqlite3
 *.pyc
 .DS_Store
+
+# Compiled Object files, Static and Dynamic libs ( *.o, *.a, *.lib )
+*.o
+*.a
+*.lib
+
+# Compiled Binary files ( *.elf, *.hex, *.bin )
+*.elf
+*.hex
+*.bin
+
+# Arduino IDE Files
+build/
+arduino-builder/
+*.hex
+*.bin
+*.eep
+*.elf
+
+# Folders to ignore
+/.arduino15/
+/.vscode/

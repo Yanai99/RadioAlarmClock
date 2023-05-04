@@ -8,4 +8,4 @@ The Python program will open the radio and press play, while the Arduino servo w
 
 So there you have it, a morning hack that will make waking up less of a chore and more of a joy. Now, what are you waiting for? Start building and have a blast!
 
-**Be sure to edit the stations and necessary cliks for your needs:)
+link to demo: https://youtu.be/hIZ9M6UGyR4

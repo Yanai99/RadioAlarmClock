@@ -9,7 +9,7 @@ void setup() {
   Serial.begin(9600); // Initialize serial communication
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
   myservo.write(0);
-  digitalWrite(13, HIGH); // turn on LED
+  digitalWrite(13, HIGH); // turn on LED Blue
 }
 
 void loop() {
@@ -18,13 +18,13 @@ void loop() {
 
     if(pythonMsg == 1)
     {
-      digitalWrite(13, LOW); // turn on LED
-      digitalWrite(12, HIGH); // turn on LED
+      digitalWrite(13, LOW); // turn off LED Blue
+      digitalWrite(12, HIGH); // turn on LED Orange
     }
     else if(pythonMsg == 2)
     {
-      digitalWrite(12, LOW); // turn on LED
-      digitalWrite(8, HIGH); // turn on LED
+      digitalWrite(12, LOW); // turn off LED Orange
+      digitalWrite(8, HIGH); // turn on LED Green
        for (val = 0; val <= 180; val++) { // move from left to right
       myservo.write(val);
       delay(300);
